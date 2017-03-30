@@ -1,0 +1,15 @@
+<div class="selected-recipe">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+                <div ng-repeat="selectedRecipe in selectedRecipes track by $index">
+                    <div ng-repeat="ingredient in selectedRecipe.ingredients track by $index">
+                        <div class="ingredient-tile" ng-click="removeIngredient($parent.$index,$index)">
+                            <span class="name">{{ingredient}}</span><span class="x"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.selected-recipe {
+  padding-top: 50px;
+
+  .ingredient-tile {
+    cursor: pointer;
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    margin: 5px;
+
+    .name {
+      margin-left: 12px;
+    }
+
+    .x {
+      &:before {
+        width: 30px;
+        height: 100%;
+        position: relative;
+        bottom: 0px;
+        content: 'x';
+        line-height: inherit;
+        text-align: center;
+        font-size: 20px;
+        float: right;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .recipe-title {
+    font-size: 35px;
+    font-weight: bold;
+  }
+}

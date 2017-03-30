@@ -1,0 +1,16 @@
+<div class="recipe-panel">
+        <div class="tile" ng-click="goToDetailsRecipe(recipe)" ng-repeat="recipe in recipes">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="img">
+                        <img src="{{recipe.img}}"/>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="title">
+                        {{recipe.title}}
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html ng-app="uplication">
+<head>
+    <title>Task Planner</title>
+    <script src="../bower_components/tether/dist/js/tether.min.js"></script>
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+
+
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="master.css"/>
+
+    <!-- inject:js -->
+    <script src="front/app.js"></script>
+    <script src="front/recipes/recipes.directive.js"></script>
+    <script src="front/shopping-list/shopping-list.directive.js"></script>
+    <script src="front/shopping-list/shopping-list.service.js"></script>
+    <script src="front/recipes/recipe-item/recipe-item.directive.js"></script>
+    <script src="front/recipes/recipe-item-details/recipe-item-details.directive.js"></script>
+    <script src="front/recipes/recipe-panel/recipe-panel.directive.js"></script>
+    <!-- endinject -->
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" style="color:white">PlanEat</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="recipes">Recipes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="shopping">Shopping list</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="main-view">
+    <ui-view></ui-view>
+</div>
+
+</body>
+
+</html>

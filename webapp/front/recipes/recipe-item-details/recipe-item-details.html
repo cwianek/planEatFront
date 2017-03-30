@@ -1,0 +1,20 @@
+<div class="recipe-details">
+    <div class="img-div">
+        <img src="{{recipe.img}}"/>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12">
+                <div class="title bold">{{recipe.title}}</div>
+                <div class="full-description">{{recipe.description}}</div>
+                <ul class="ingredients">
+                    <span class="bold">Ingredients:</span>
+                    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="add-button" ng-click="addToShoppingList()">Add to shop list</div>
+    </div>
+</div>
