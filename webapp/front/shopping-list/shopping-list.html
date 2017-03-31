@@ -5,7 +5,7 @@
                 <div ng-repeat="selectedRecipe in selectedRecipes track by $index">
                     <div ng-repeat="ingredient in selectedRecipe.ingredients track by $index">
                         <div class="ingredient-tile" ng-click="removeIngredient($parent.$index,$index)">
-                            <span class="name">{{ingredient}}</span><span class="x"></span>
+                            <span class="name">{{ingredient.product.name}}</span><span class="x"></span>
                         </div>
                     </div>
                 </div>
@@ -13,3 +13,5 @@
         </div>
     </div>
 </div>
+<!--
+<button type="button" class="btn btn-default" ng-click="click()">ClickMe</button>-->

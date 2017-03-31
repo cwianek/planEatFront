@@ -10,118 +10,120 @@
             }
         });
 
-    function recipesController($scope, $state,$location) {
+    function recipesController($scope, $state, $location) {
 
-        $scope.recipes=[
+        $scope.recipe =
             {
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },{
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },{
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },{
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Bigos',
-                description: 'Sekret pysznego bigosu tkwi w "przegryzieniu" się wszystkich smaków. Dlatego im dłużej bigos się gotuje lub odgrzewa, tym jest smaczniejszy!',
-                img: 'https://i.ytimg.com/vi/BQrs4yJx1M4/maxresdefault.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
-            },
-            {
-                title: 'Grochowka',
-                description: 'Pyszna grochówka, przypomni nam dawno zapomniany smaki zachwyci, bo taka grochówka jak moja zasmakuje każdemu :) Bo grochówka Ewy jest najlepsza',
-                img: 'http://bi.gazeta.pl/im/b2/17/e9/z15275954Q,Zupa-jarzynowa.jpg',
-                ingredients: ['tomato','potato','paper','rise','cheese','full gluten']
+                name: "Bigos",
+                prepareTime: "10min",
+                difficulty: "very easy",
+                ingredients: [
+                    {
+                        quantity: "4",
+                        unit: "spoons",
+                        product: {
+                            name: 'Flour',
+                            proteins: 128,
+                            carbs: 32,
+                            fat: 16,
+                            calories: 290
+                        }
+                    },
+                    {
+                        quantity: "2",
+                        unit: "spoons",
+                        product: {
+                            name: 'Flour',
+                            proteins: 128,
+                            carbs: 32,
+                            fat: 16,
+                            calories: 290
+                        }
+                    },
+                    {
+                        quantity: "3",
+                        unit: "spoons",
+                        product: {
+                            name: 'Flour',
+                            proteins: 128,
+                            carbs: 32,
+                            fat: 16,
+                            calories: 290
+                        }
+                    },
+                    {
+                        quantity: "4",
+                        unit: "spoons",
+                        product: {
+                            name: 'Flour',
+                            proteins: 128,
+                            carbs: 32,
+                            fat: 16,
+                            calories: 290
+                        }
+                    },
+                    {
+                        quantity: "4",
+                        unit: "spoons",
+                        product: {
+                            name: 'Flour',
+                            proteins: 128,
+                            carbs: 32,
+                            fat: 16,
+                            calories: 290
+                        }
+                    },
+
+
+                ],
+                instructionSteps: [
+                    {
+                        number: 1,
+                        description: 'some description how to prepare the dinner'
+                    },
+                    {
+                        number: 2,
+                        description: 'some description how to prepare'
+                    },
+                    {
+                        number: 3,
+                        description: 'some description how to prepare'
+                    },
+                    {
+                        number: 4,
+                        description: 'some description how to prepare'
+                    },
+                    {
+                        number: 5,
+                        description: 'some description how to prepare'
+                    },
+                    {
+                        number: 6,
+                        description: 'some description how to prepare'
+                    }
+
+
+                ]
+
+            };
+
+       
+        var recipeNames = ['Bigos', 'Grochowka', 'Jarzynowa']
+        function mockRecipes() {
+            var recipes = [];
+            for (var i = 0; i < 25; i++) {
+                var recipe = angular.copy($scope.recipe);
+                recipe.name = recipeNames[i % recipeNames.length];
+                recipe.img = 'images/'+recipe.name.toLowerCase() + '.jpg';
+                recipes.push(recipe)
             }
-        ];
-
+            return recipes;
+        };
+        
+        $scope.recipes = mockRecipes();
+        
         $scope.goToDetailsRecipe = function (recipe) {
-            $state.go('list.details',{recipe: recipe, recipes: $scope.recipes});
+            $state.go('list.details', { recipe: recipe, recipes: $scope.recipes });
         };
 
     }

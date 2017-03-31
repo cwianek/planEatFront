@@ -8,9 +8,7 @@
                 controller: recipeItemController,
                 controllerAs: 'ctrl',
                 scope: {
-                    title: '=',
-                    description: '=',
-                    img: '='
+                    recipe: '='
                 }
             }
         });

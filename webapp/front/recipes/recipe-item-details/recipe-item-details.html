@@ -1,20 +1,36 @@
 <div class="recipe-details">
-    <div class="img-div">
-        <img src="{{recipe.img}}"/>
-    </div>
     <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-12">
-                <div class="title bold">{{recipe.title}}</div>
-                <div class="full-description">{{recipe.description}}</div>
-                <ul class="ingredients">
-                    <span class="bold">Ingredients:</span>
-                    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
-                </ul>
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="img-div">
+                        <img src="{{recipe.img}}" />
+                        <div class="title">{{recipe.name}}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ingredients">
+                        
+                        <ul class="ingredients-list">
+                            <span class="bold">Ingredients:</span>
+                            <li ng-repeat="ingredient in recipe.ingredients">{{ingredient.product.name}} {{ingredient.quantity}} {{ingredient.unit}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12">
+                <div class="steps">
+                    <div class="title">Steps</div>
+                    <div>
+                        <ul class="steps-list">
+                            <li ng-repeat="step in recipe.instructionSteps">{{step.description}}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="add-button" ng-click="addToShoppingList()">Add to shop list</div>
+        <div class="row justify-content-center">
+            <div class="add-button" ng-click="addToShoppingList()">Add to shop list</div>
+        </div>
     </div>
 </div>

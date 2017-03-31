@@ -1,13 +1,16 @@
-<div class="recipes">
+<div class="parallax">
+     <div class="description">Wyszukaj przepis na swój ulubiony posiłek!</div>
     <div class="recipes-search">
         <div class="form-group">
-            <div>
+            <div class="input-field">
                 <input ng-model="inputtext" type="text" class="form-control" placeholder="Search recipe">
-                <span class="icon"></span>
             </div>
         </div>
     </div>
-    <recipe-item class="animate-repeat" ng-click="goToDetailsRecipe(recipe)" ng-repeat="recipe in recipes | filter: {title: inputtext}" description="recipe.description"
-                 title="recipe.title" img="recipe.img">
+</div>
+
+<div class="recipes">
+    <recipe-item class="animate-repeat" ng-click="goToDetailsRecipe(recipe)" ng-repeat="recipe in recipes | filter: {name: inputtext}" 
+        recipe="recipe">
     </recipe-item>
 </div>

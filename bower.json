@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "livereload-js": "^2.2.1",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "components-font-awesome": "^4.7.0"
   }
 }

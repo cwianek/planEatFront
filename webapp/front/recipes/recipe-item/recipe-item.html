@@ -1,13 +1,18 @@
 <div class="recipe-item">
     <div class="img">
-        <img src="{{img}}"/>
+        <img src="{{recipe.img}}" />
     </div>
     <div class="description">
         <div class="title">
-            {{title}}
+            {{recipe.name}}
         </div>
         <div class="desc">
-            {{description}}
+            <div>
+                <i class="fa fa-clock-o" aria-hidden="true"></i> {{recipe.prepareTime}}
+            </div>
+            <div>
+                <i class="fa fa-signal" aria-hidden="true"></i> {{recipe.difficulty}}
+            </div>
         </div>
     </div>
 </div>

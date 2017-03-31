@@ -2,17 +2,12 @@
 @recipe-height: 300px;
 @recipe-margin: 25px;
 @recipe-padding: 25px;
-
+@title-size: 22px;
 .recipes {
   width: 95%;
   margin: auto;
   margin-top: 50px;
   text-align: center;
-
-  .recipes-search {
-    margin: auto;
-    width: 300px;
-  }
 
   .icon:after {
     position: relative;
@@ -48,9 +43,17 @@
       }
 
       .desc {
-        font-size: 10px;
-        padding: 20px;
+        font-size: 12px;
+        padding: 10px;
         justify-content: center;
+
+        div{
+          i{
+            margin-right: 10px;
+          }
+          margin: 10px; 
+        }
+
       }
     }
 
@@ -60,19 +63,70 @@
   }
 }
 
-@recipe-details-image-width: 150px;
+.parallax{
+  background-image: url(http://pizzaslonce.pl/nowasol/wp-content/uploads/2016/09/cropped-pizza_slonce_nowa_sol.jpg);
+  background-attachment: fixed;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+     @recipes-search-width:300px;
+    .recipes-search {
+      position: relative;
+      margin: auto;
+      padding-bottom: 50px;
+      width:  @recipes-search-width;
+      
+      ::-webkit-input-placeholder {
+        color: white;
+      }
+
+      .form-control{
+        color: white;
+        border: 2px solid white;
+        border-radius: 0px;
+        background-color: rgba(255,255,255,0.2);
+      }
+
+      .input-field{
+        &:after{
+          font-family: FontAwesome;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          content:  "\f002";
+          position: absolute;
+          top: 6px;
+          right: 10px;
+          color: white;
+        }
+      }
+  }
+
+
+  .description{
+    text-align: center;
+    color:white;
+    font-size: 30px;
+    padding: 40px;
+    font-weight: bold;
+  }
+
+}
+
+@recipe-details-image-width: 50%;
 @recipe-details-padding: 15px;
 @recipe-top-margin: 20px;
 .recipe-details {
-  height: 500px;
-  overflow: scroll;
-  width: 70%;
-  margin-top: @recipe-top-margin;
-  padding: @recipe-details-padding;
+  height: 100%;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px 0;
   box-shadow: 10px 10px 50px 1px rgba(0, 0, 0, 0.2);
 
   .img-div {
     text-align: center;
+    display: inline-block;
     img {
       width: @recipe-details-image-width;
       height: auto;
@@ -88,23 +142,34 @@
 
   .title {
     padding: @recipe-details-padding;
-    font-size: 18px;
+    font-size: @title-size;
     text-align: center;
   }
 
-  .full-description .ingredients {
+  .full-description .ingredients-list {
     padding: @recipe-details-padding;
   }
 
-  .ingredients {
-    margin-top: @recipe-margin;
+  .ingredients{
+    padding: 10px;
+  .ingredients-list {
+    padding: 5px;
+    overflow: hidden;
+    float: right;
 
     li {
-      list-style: none;
       display: inline-block;
+      list-style: none;
       margin: 10px;
     }
 
+  }
+  .title{
+    text-align: center;
+    font-weight: bold;
+    font-size: @title-size;
+    padding: 0px;
+  }
   }
 
   .gradient(@start-color:#eee,@end-color: #fff) {
@@ -122,6 +187,7 @@
     padding: @button-padding;
     background-color: #292B2C;
     color: white;
+    margin-top: 30px;
 
     &:before {
       content: '';
@@ -137,6 +203,27 @@
       background-color: white;
       color: black;
       transition: background-color 2s;
+    }
+
+  }
+
+  .steps{
+    .title{
+      text-align: center;
+      font-weight: bold;
+      font-size: @title-size;
+    }
+
+    ul{
+      
+      margin-left: 20px;
+      margin-top: 30px;
+      padding: 0px;
+    li{
+      width: 100%;
+      list-style: none;
+      margin: 10px;
+    }
     }
 
   }
