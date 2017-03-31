@@ -1,11 +1,24 @@
 <div class="selected-recipe">
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col col-lg-6">
+            <div class="col-6">
+                <div class="headers-description">
+                    <div class="row">
+                        <div class="header col-3">Product</div>
+                        <div class="header col-3">Carbs</div>
+                        <div class="header col-3">Proteins</div>
+                        <div class="header col-3">Fat</div>
+                    </div>
+                </div>
                 <div ng-repeat="selectedRecipe in selectedRecipes track by $index">
                     <div ng-repeat="ingredient in selectedRecipe.ingredients track by $index">
                         <div class="ingredient-tile" ng-click="removeIngredient($parent.$index,$index)">
-                            <span class="name">{{ingredient.product.name}}</span><span class="x"></span>
+                            <div class="product-desc row">
+                                <div class="product-property col-3">{{ingredient.product.name}}</div>
+                                <div class="product-property col-3">{{ingredient.product.carbs}}</div>
+                                <div class="product-property col-3">{{ingredient.product.proteins}}</div>
+                                <div class="product-property col-3">{{ingredient.product.fat}}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
