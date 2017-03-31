@@ -1,36 +1,67 @@
-<div class="recipe-details">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 col-md-12 col-sm-12">
-                <div class="row">
-                    <div class="img-div">
-                        <img src="{{recipe.img}}" />
-                        <div class="title">{{recipe.name}}</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="ingredients">
-                        
-                        <ul class="ingredients-list">
-                            <span class="bold">Ingredients:</span>
-                            <li ng-repeat="ingredient in recipe.ingredients">{{ingredient.product.name}} {{ingredient.quantity}} {{ingredient.unit}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 col-md-12 col-sm-12">
-                <div class="steps">
-                    <div class="title">Steps</div>
-                    <div>
-                        <ul class="steps-list">
-                            <li ng-repeat="step in recipe.instructionSteps">{{step.description}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 col-md-12 col-sm-12">
+            <div class="title-details">{{recipe.name}}</div>
         </div>
-        <div class="row justify-content-center">
-            <div class="add-button" ng-click="addToShoppingList()">Add to shop list</div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-10 col-sm-12 recipe-details">
+
+            <!--<div class="img-div"><img src="{{recipe.img}}" /></div>-->
+            <div class="ingredients">
+                <div class="img-ingredients">
+                    <div class="ingredients-title">Ingredients</div>
+                </div>
+                <div class="ingredient-desc">
+                    <div class="row justify-content-center">
+                        <div class="col-4 ingredient-property">
+                            Name
+                        </div>
+                        <div class="col-4 ingredient-property">
+                            Quantity
+                        </div>
+                    </div>
+                </div>
+                <div class="ingredient" ng-repeat="ingredient in recipe.ingredients">
+                    <div class="row justify-content-center">
+                        <div class="col-4 ingredient-property">
+                            {{ingredient.product.name}}
+                        </div>
+                        <div class="col-4 ingredient-property">
+                            {{ingredient.quantity}} {{ingredient.unit}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="steps">
+                <div class="img-preparation">
+                    <div class="steps-title">Steps</div>
+                </div>
+                <div class="steps-desc">
+                    <div class="row justify-content-center">
+                        <div class="col-1 step-property">
+                            Number
+                        </div>
+                        <div class="col-9 step-property">
+                            Description
+                        </div>
+                    </div>
+                </div>
+                <div class="step" ng-repeat="step in recipe.instructionSteps">
+                    <div class="row justify-content-center">
+                        <div class="col-1 step-property">
+                            {{step.number}}
+                        </div>
+                        <div class="col-9 step-property">
+                            {{step.description}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button type="button" class="add-button" ng-click="addToShoppingList()">Add to shop list</button>
+            </div>
         </div>
     </div>
 </div>

@@ -135,74 +135,85 @@ html {
   font-weight: bold;
 }
 
+.title-details {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #393B3C;
+  color: white;
+  padding: 15px;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .recipe-details {
-  height: 100%;
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px 0;
+  margin-top: 20px;
+  padding: 0px;
   box-shadow: 10px 10px 50px 1px rgba(0, 0, 0, 0.2);
 }
 
 .recipe-details .img-div {
+  margin-top: 30px;
   text-align: center;
-  display: inline-block;
 }
 
 .recipe-details .img-div img {
   width: 50%;
   height: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 20px 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.recipe-details .full-description {
-  font-size: 15px;
-  text-align: justify;
-  margin: 0px 20px;
-}
-
-.recipe-details .title {
-  padding: 15px;
-  font-size: 22px;
-  text-align: center;
-}
-
-.recipe-details .full-description .ingredients-list {
-  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 5px 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .recipe-details .ingredients {
-  padding: 10px;
+  margin: auto;
+  width: 100%;
 }
 
-.recipe-details .ingredients .ingredients-list {
+.recipe-details .ingredients .img-ingredients {
+  height: 100px;
+  width: 100%;
+  background-image: url("images/bg-img.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.recipe-details .ingredients .img-ingredients .ingredients-title {
+  padding: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+.recipe-details .ingredients .ingredient-desc {
+  background-color: #393B3C;
   padding: 5px;
-  overflow: hidden;
-  float: right;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.recipe-details .ingredients .ingredients-list li {
-  display: inline-block;
-  list-style: none;
-  margin: 10px;
+.recipe-details .ingredients .ingredient {
+  padding: 5px;
+  color: #292B2C;
+  text-align: center;
 }
 
 .recipe-details .ingredients .title {
   text-align: center;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 30px;
   padding: 0px;
 }
 
 .recipe-details .add-button {
-  position: relative;
-  bottom: 0px;
   width: 200px;
   cursor: pointer;
   text-align: center;
   padding: 11px;
-  background-color: #292B2C;
+  background-color: #393B3C;
   color: white;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 
 .recipe-details .add-button:before {
@@ -221,22 +232,39 @@ html {
   transition: background-color 2s;
 }
 
-.recipe-details .steps .title {
+.recipe-details .steps {
+  margin-top: 100px;
+}
+
+.recipe-details .steps .steps-desc {
+  background-color: #393B3C;
+  padding: 5px;
+  color: white;
   text-align: center;
-  font-weight: bold;
-  font-size: 22px;
+  margin-bottom: 20px;
 }
 
-.recipe-details .steps ul {
-  margin-left: 20px;
-  margin-top: 30px;
-  padding: 0px;
+.recipe-details .steps .step {
+  padding: 5px;
+  color: #292B2C;
+  text-align: center;
 }
 
-.recipe-details .steps ul li {
+.recipe-details .steps .img-preparation {
+  height: 100px;
   width: 100%;
-  list-style: none;
-  margin: 10px;
+  background-image: url("images/bg-img.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.recipe-details .steps .img-preparation .steps-title {
+  color: white;
+  font-weight: bold;
+  padding: 40px;
+  text-align: center;
+  font-size: 30px;
 }
 
 .recipe-panel {

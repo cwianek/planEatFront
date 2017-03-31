@@ -2,7 +2,8 @@
 @recipe-height: 300px;
 @recipe-margin: 25px;
 @recipe-padding: 25px;
-@title-size: 22px;
+@title-size: 30px;
+@nav-color: #292B2C;
 .recipes {
   width: 95%;
   margin: auto;
@@ -114,57 +115,74 @@
 
 }
 
+.title-details {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #393B3C;
+    color: white;
+    padding: @recipe-details-padding;
+    font-size: @title-size+10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
 @recipe-details-image-width: 50%;
 @recipe-details-padding: 15px;
 @recipe-top-margin: 20px;
 .recipe-details {
-  height: 100%;
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px 0;
+  margin-top: @recipe-top-margin;
+  padding: 0px;
+  // height: 100%;
+  // margin: 20px auto;
   box-shadow: 10px 10px 50px 1px rgba(0, 0, 0, 0.2);
 
   .img-div {
+    margin-top: 30px;
     text-align: center;
-    display: inline-block;
     img {
       width: @recipe-details-image-width;
       height: auto;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 20px 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 5px 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
   }
 
-  .full-description {
-    font-size: 15px;
-    text-align: justify;
-    margin: 0px 20px;
-  }
-
-  .title {
-    padding: @recipe-details-padding;
-    font-size: @title-size;
-    text-align: center;
-  }
-
-  .full-description .ingredients-list {
-    padding: @recipe-details-padding;
-  }
+  
 
   .ingredients{
-    padding: 10px;
-  .ingredients-list {
-    padding: 5px;
-    overflow: hidden;
-    float: right;
+    margin: auto;
+    width: 100%;
 
-    li {
-      display: inline-block;
-      list-style: none;
-      margin: 10px;
+ .img-ingredients{
+    height: 100px;
+    width: 100%;
+    background-image: url(../../images/bg-img.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    .ingredients-title{
+      padding: 30px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+       font-size: @title-size;
+    }
+ }
+    .ingredient-desc{
+      background-color: #393B3C;
+      padding: 5px;
+      color:white;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-  }
-  .title{
+    .ingredient{
+      padding: 5px;
+      color: @nav-color;
+      text-align: center;
+    }
+
+    .title{
     text-align: center;
     font-weight: bold;
     font-size: @title-size;
@@ -179,15 +197,13 @@
 
   @button-padding: 11px;
   .add-button {
-    position: relative;
-    bottom: 0px;
     width: 200px;
     cursor: pointer;
     text-align: center;
     padding: @button-padding;
-    background-color: #292B2C;
+    background-color: #393B3C;
     color: white;
-    margin-top: 30px;
+    margin-top: 100px;
 
     &:before {
       content: '';
@@ -208,25 +224,40 @@
   }
 
   .steps{
-    .title{
+    margin-top: 100px;
+    .steps-desc{
+      background-color: #393B3C;
+      padding: 5px;
+      color:white;
       text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .step{
+      padding: 5px;
+      color: @nav-color;
+      text-align: center;
+    }
+
+     .img-preparation{
+    height: 100px;
+    width: 100%;
+    background-image: url(../../images/bg-img.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .steps-title{
+      color:white;
       font-weight: bold;
-      font-size: @title-size;
+      padding: 40px;
+      text-align: center;
+       font-size: @title-size;
     }
-
-    ul{
-      
-      margin-left: 20px;
-      margin-top: 30px;
-      padding: 0px;
-    li{
-      width: 100%;
-      list-style: none;
-      margin: 10px;
-    }
-    }
-
   }
+  }
+
+ 
 
 }
 
