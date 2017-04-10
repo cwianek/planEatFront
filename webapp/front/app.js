@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module('uplication', ['ngAnimate','ngResource','ui.router'])
-        .config(function($stateProvider, $urlRouterProvider){
+        .config(function($stateProvider, $urlRouterProvider,$httpProvider){
 
         $stateProvider
             .state('parent',{
@@ -43,6 +43,12 @@
             })
 
             $urlRouterProvider.otherwise('/recipes');
+
+            $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
     });
+
+
+
 
 })();
