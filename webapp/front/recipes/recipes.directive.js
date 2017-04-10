@@ -128,14 +128,14 @@
         }
 
         $scope.searchRecipe = function(inputFilter) {
-            $http.get("planeat-echomil.rhcloud.com/recipe?name="+inputFilter).then(function (response) {
+            $http.jsonp("http://planeat-echomil.rhcloud.com/recipe?name="+inputFilter).then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
             });
         }
 
         $scope.loadRecipes = function () {
-            $http.get("planeat-echomil.rhcloud.com/recipes").then(function (response) {
+            $http.jsonp("http://planeat-echomil.rhcloud.com/recipes").then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
                 //mockRecipes($scope.recipes);
