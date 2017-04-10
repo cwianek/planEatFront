@@ -135,7 +135,7 @@
         }
 
         $scope.loadRecipes = function () {
-            $http({method: 'JSONP', url: '/planeat-echomil.rhcloud.com/recipes', cache: false}).then(function (response) {
+            $http("http://planeat-echomil.rhcloud.com/recipes/").then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
                 //mockRecipes($scope.recipes);
