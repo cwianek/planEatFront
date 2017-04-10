@@ -10,6 +10,7 @@
   "dependencies": {
     "bower": "^1.8.0",
     "browser-sync": "^2.18.8",
+    "express": "^4.15.2",
     "grunt": "~1.0.0",
     "grunt-bower-install-simple": "~1.2.3",
     "grunt-contrib-clean": "~1.0.0",
@@ -33,6 +34,6 @@
     "time-grunt": "~1.3.0"
   },
   "scripts": {
-	"postintall": "./node_modules/bower/bin/bower install"
+    "postintall": "./node_modules/bower/bin/bower install"
   }
 }
