@@ -1,9 +1,10 @@
-<div class="parallax">
+<div class="parallax" ng-init="loadRecipes()">
      <div class="description">Wyszukaj przepis na swój ulubiony posiłek!</div>
     <div class="recipes-search">
         <div class="form-group">
             <div class="input-field">
                 <input ng-model="inputtext" type="text" class="form-control" placeholder="Search recipe">
+                <div class="search-button" ng-click="searchRecipe(inputtext)"></div>
             </div>
         </div>
     </div>

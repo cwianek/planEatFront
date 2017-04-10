@@ -10,7 +10,7 @@
             }
         });
 
-    function recipesController($scope, $state, $location) {
+    function recipesController($scope, $state, $location, $http) {
 
         $scope.recipe =
             {
@@ -107,21 +107,42 @@
 
             };
 
-       
+
         var recipeNames = ['Bigos', 'Grochowka', 'Jarzynowa']
-        function mockRecipes() {
-            var recipes = [];
+        function mockRecipes(recipes) {
             for (var i = 0; i < 25; i++) {
                 var recipe = angular.copy($scope.recipe);
                 recipe.name = recipeNames[i % recipeNames.length];
-                recipe.img = 'images/'+recipe.name.toLowerCase() + '.jpg';
+                recipe.img = 'images/' + recipe.name.toLowerCase() + '.jpg';
                 recipes.push(recipe)
             }
             return recipes;
         };
+
         
-        $scope.recipes = mockRecipes();
-        
+        function appendImages() {
+            angular.forEach($scope.recipes, function (recipe) {
+                var fileName = recipe.name.toLowerCase() + '.jpg';
+                recipe.img = 'images/' + fileName;
+            });
+        }
+
+        $scope.searchRecipe = function(inputFilter) {
+            $http.get("http://planeat-echomil.rhcloud.com/recipe?name="+inputFilter).then(function (response) {
+                $scope.recipes = response.data;
+                appendImages();
+            });
+        }
+
+        $scope.loadRecipes = function () {
+            $http.get("http://planeat-echomil.rhcloud.com/recipes").then(function (response) {
+                $scope.recipes = response.data;
+                appendImages();
+                //mockRecipes($scope.recipes);
+            });
+        }
+
+
         $scope.goToDetailsRecipe = function (recipe) {
             $state.go('list.details', { recipe: recipe, recipes: $scope.recipes });
         };

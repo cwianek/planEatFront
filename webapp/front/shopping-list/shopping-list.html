@@ -5,9 +5,11 @@
                 <div class="headers-description">
                     <div class="row">
                         <div class="header col-3">Product</div>
-                        <div class="header col-3">Carbs</div>
+                        <div class="header col-3">Quantity</div>
+                        <div class="header col-3">Unit</div>
+                        <!--<div class="header col-3">Carbs</div>
                         <div class="header col-3">Proteins</div>
-                        <div class="header col-3">Fat</div>
+                        <div class="header col-3">Fat</div>-->
                     </div>
                 </div>
                 <div ng-repeat="selectedRecipe in selectedRecipes track by $index">
@@ -15,9 +17,11 @@
                         <div class="ingredient-tile" ng-click="removeIngredient($parent.$index,$index)">
                             <div class="product-desc row">
                                 <div class="product-property col-3">{{ingredient.product.name}}</div>
-                                <div class="product-property col-3">{{ingredient.product.carbs}}</div>
-                                <div class="product-property col-3">{{ingredient.product.proteins}}</div>
-                                <div class="product-property col-3">{{ingredient.product.fat}}</div>
+                                <div class="product-property col-3">{{ingredient.quantity}}</div>
+                                <div class="product-property col-3">{{ingredient.unit | lowercase}}</div>
+                                <!--<div class="product-property col-3">{{ingredient.product.carboGrams}}</div>
+                                <div class="product-property col-3">{{ingredient.product.proteinGrams}}</div>
+                                <div class="product-property col-3">{{ingredient.product.fatGrams}}</div>-->
                             </div>
                         </div>
                     </div>

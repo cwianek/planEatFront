@@ -21,17 +21,18 @@
   margin: 25px 0px 0px 25px;
   display: inline-block;
   width: 180px;
-  height: 300px;
+  height: 320px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .recipes .recipe-item .img img {
   width: 180px;
-  height: 150px;
+  height: 160px;
 }
 .recipes .recipe-item .description .title {
+  margin: 0 5px;
   padding-top: 10px;
   text-align: center;
-  font-size: 20px;
+  font-size: 16px;
 }
 .recipes .recipe-item .description .desc {
   font-size: 12px;
@@ -70,6 +71,7 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 .parallax .recipes-search .input-field:after {
+  cursor: pointer;
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
@@ -79,6 +81,15 @@
   top: 6px;
   right: 10px;
   color: white;
+}
+.parallax .recipes-search .input-field .search-button {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 50px;
+  height: 40px;
+  z-index: 100;
 }
 .parallax .description {
   text-align: center;
@@ -118,15 +129,11 @@
 .recipe-details .ingredients .img-ingredients {
   height: 100px;
   width: 100%;
-  background-image: url(../../images/bg-img.jpg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .recipe-details .ingredients .img-ingredients .ingredients-title {
   padding: 30px;
   font-weight: bold;
-  color: white;
+  color: #292B2C;
   text-align: center;
   font-size: 30px;
 }
@@ -156,6 +163,7 @@
   background-color: #393B3C;
   color: white;
   margin-top: 100px;
+  margin-bottom: 50px;
 }
 .recipe-details .add-button:before {
   content: '';
@@ -183,18 +191,14 @@
 .recipe-details .steps .step {
   padding: 5px;
   color: #292B2C;
-  text-align: center;
+  text-align: justify;
 }
 .recipe-details .steps .img-preparation {
   height: 100px;
   width: 100%;
-  background-image: url(../../images/bg-img.jpg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .recipe-details .steps .img-preparation .steps-title {
-  color: white;
+  color: #292B2D;
   font-weight: bold;
   padding: 40px;
   text-align: center;

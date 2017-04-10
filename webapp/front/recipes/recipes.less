@@ -1,5 +1,5 @@
 @recipe-width: 180px;
-@recipe-height: 300px;
+@recipe-height: 320px;
 @recipe-margin: 25px;
 @recipe-padding: 25px;
 @title-size: 30px;
@@ -38,9 +38,10 @@
 
     .description {
       .title {
+        margin: 0 5px;
         padding-top: 10px;
         text-align: center;
-        font-size: 20px;
+        font-size: 16px;
       }
 
       .desc {
@@ -91,6 +92,7 @@
 
       .input-field{
         &:after{
+          cursor: pointer;
           font-family: FontAwesome;
           font-style: normal;
           font-weight: normal;
@@ -100,6 +102,16 @@
           top: 6px;
           right: 10px;
           color: white;
+        }
+
+        .search-button{
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 50px;
+            height: 40px;
+            z-index: 100;
         }
       }
   }
@@ -155,15 +167,11 @@
  .img-ingredients{
     height: 100px;
     width: 100%;
-    background-image: url(../../images/bg-img.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
     
     .ingredients-title{
       padding: 30px;
       font-weight: bold;
-      color: white;
+      color: #292B2C;
       text-align: center;
        font-size: @title-size;
     }
@@ -204,6 +212,7 @@
     background-color: #393B3C;
     color: white;
     margin-top: 100px;
+    margin-bottom: 50px;
 
     &:before {
       content: '';
@@ -236,19 +245,15 @@
     .step{
       padding: 5px;
       color: @nav-color;
-      text-align: center;
+      text-align: justify;
     }
 
      .img-preparation{
     height: 100px;
     width: 100%;
-    background-image: url(../../images/bg-img.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
 
     .steps-title{
-      color:white;
+      color:#292B2D;
       font-weight: bold;
       padding: 40px;
       text-align: center;

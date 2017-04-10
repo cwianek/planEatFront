@@ -38,3 +38,6 @@
 .selected-recipe .product-desc {
   text-align: center;
 }
+.selected-recipe .product-desc .product-property {
+  white-space: nowrap;
+}
