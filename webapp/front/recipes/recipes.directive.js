@@ -10,7 +10,7 @@
             }
         });
 
-    function recipesController($scope, $state, $location, $http) {
+    function recipesController($scope, $state, $location, $https) {
 
         $scope.recipe =
             {
@@ -128,14 +128,14 @@
         }
 
         $scope.searchRecipe = function(inputFilter) {
-            $http.get("http://planeat-echomil.rhcloud.com/recipe?name="+inputFilter).then(function (response) {
+            $https.get("http://planeat-echomil.rhcloud.com/recipe?name="+inputFilter).then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
             });
         }
 
         $scope.loadRecipes = function () {
-            $http.get("http://planeat-echomil.rhcloud.com/recipes").then(function (response) {
+            $https.get("http://planeat-echomil.rhcloud.com/recipes").then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
                 //mockRecipes($scope.recipes);
