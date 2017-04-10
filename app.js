@@ -1,5 +1,6 @@
 var express = require('express');
-var app = express();
-app.use(allowCrossDomain);
+var cors = require('cors')
+var app = express()
+app.use(cors())
 app.use(express.static(__dirname));
 app.listen(process.env.PORT || 3000);
