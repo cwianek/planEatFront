@@ -135,7 +135,7 @@
         // }
 
         $scope.loadRecipes = function () {
-            $http.get("http://planeat-echomil.rhcloud.com/recipes/").then(function (response) {
+            $http.get("https://planeat-echomil.rhcloud.com/recipes/").then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
                 //mockRecipes($scope.recipes);
