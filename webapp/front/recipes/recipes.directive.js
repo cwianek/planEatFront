@@ -135,14 +135,7 @@
         // }
 
         $scope.loadRecipes = function () {
-            $http.get("https://planeat-echomil.rhcloud.com/recipes/",
-                headers: {
-		                'Content-Type': 'application/json' , 
-		                'Access-Control-Allow-Origin': '*',
-		                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-		                'Access-Control-Allow-Headers':'X-Requested-With'	
-		            }
-            ).then(function (response) {
+            $http.get("https://planeat-echomil.rhcloud.com/recipes/").then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
                 mockRecipes($scope.recipes);
