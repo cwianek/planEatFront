@@ -138,7 +138,7 @@
             $http.get("https://planeat-echomil.rhcloud.com/recipes/").then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
-                //mockRecipes($scope.recipes);
+                mockRecipes($scope.recipes);
             });
         }
 
