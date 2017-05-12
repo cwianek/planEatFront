@@ -27,3 +27,29 @@ html {
   opacity: 1;
   max-height: 30px;
 }
+.fade.in {
+  opacity: 1;
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.nav-link {
+  cursor: pointer;
+}
+.register-text {
+  color: cadetblue;
+  cursor: pointer;
+}
+.register-text:hover {
+  text-decoration: underline;
+}
+.modal-footer .error-message {
+  color: red;
+  margin-right: 50px;
+}

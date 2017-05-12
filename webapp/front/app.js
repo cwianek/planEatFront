@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('uplication', ['ngAnimate','ngResource','ui.router'])
+    angular.module('uplication', ['ngAnimate','ngResource','ui.router','ui.bootstrap'])
         .config(function($stateProvider, $urlRouterProvider){
 
         $stateProvider
@@ -17,7 +17,6 @@
             .state('shopping',{
                 url: '/shopping',
                 controller: function ($stateParams) {
-                    console.log("TWORZE SIE");
                 },
                 template: '<shopping-list></shopping-list>',
             })
@@ -25,6 +24,10 @@
                 abstract: true,
                 url: '/list',
                 templateUrl: 'front/recipes/recipes-main.html'
+            })
+            .state('manageAccount',{
+                url: '/manageAccount',
+                template: '<account-manager></account-manager>'
             })
             .state('list.details',{
                 url: '/details',
@@ -47,6 +50,24 @@
     });
 
 
+    angular.module('uplication').controller('userController', userController);
+    
+     function userController($scope, accountService){
+         $scope.accountService = accountService;
+
+         $scope.$watch('accountService.getAccountInfo()',function(newVal){
+             $scope.logged = newVal.logged;
+             $scope.username = newVal.user;
+         }, true);
+
+         $scope.openRegisterModal = accountService.openRegisterModal;
+         $scope.openLogInModal = accountService.openLogInModal;
+         $scope.logout = accountService.logout;
+    }
+
+
+
+    
 
 
 })();

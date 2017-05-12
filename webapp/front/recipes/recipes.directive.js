@@ -10,7 +10,7 @@
             }
         });
 
-    function recipesController($scope, $state, $location, $http) {
+    function recipesController($scope, $state, $location, $http, $uibModal) {
 
         $scope.recipe =
             {
@@ -119,7 +119,7 @@
             return recipes;
         };
 
-        
+
         function appendImages() {
             angular.forEach($scope.recipes, function (recipe) {
                 var fileName = recipe.name.toLowerCase() + '.jpg';
@@ -135,7 +135,7 @@
         // }
 
         $scope.loadRecipes = function () {
-            $http.get("https://planeat-echomil.rhcloud.com/recipes/").then(function (response) {
+            $http.get("http://planeat-echomil.rhcloud.com/recipes").then(function (response) {
                 $scope.recipes = response.data;
                 appendImages();
                 mockRecipes($scope.recipes);
@@ -146,8 +146,9 @@
         $scope.goToDetailsRecipe = function (recipe) {
             $state.go('list.details', { recipe: recipe, recipes: $scope.recipes });
         };
+    
 
-    }
+}
 
 
 })();

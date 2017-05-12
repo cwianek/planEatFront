@@ -10,7 +10,8 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
-
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    
 
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css"/>
@@ -18,12 +19,14 @@
 
     <!-- inject:js -->
     <script src="front/app.js"></script>
+    <script src="front/account/account.service.js"></script>
     <script src="front/recipes/recipes.directive.js"></script>
     <script src="front/shopping-list/shopping-list.directive.js"></script>
     <script src="front/shopping-list/shopping-list.service.js"></script>
+    <script src="front/account/account-manager/account-manager.component.js"></script>
     <script src="front/recipes/recipe-item/recipe-item.directive.js"></script>
-    <script src="front/recipes/recipe-item-details/recipe-item-details.directive.js"></script>
     <script src="front/recipes/recipe-panel/recipe-panel.directive.js"></script>
+    <script src="front/recipes/recipe-item-details/recipe-item-details.directive.js"></script>
     <!-- endinject -->
 
 </head>
@@ -45,6 +48,18 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" ui-sref="shopping">Shopping list</a>
+            </li>
+        </ul>
+        <ul ng-controller="userController" class="navbar-nav navbar-right">
+            <li ng-if="!logged" class="nav-item">
+                <div class="nav-link" ng-click="openLogInModal()">Log in</div>
+            </li>
+            <li ng-if="!logged" class="nav-item">
+                <div class="nav-link" ng-click="openRegisterModal()">Register</div>
+            </li>
+            <li class="nav-link" ui-sref="manageAccount"><span class="username"> {{username}} </span></li>
+            <li ng-if="logged" class="nav-item">
+                <div class="nav-link" ng-click="logout()">Logout</div>
             </li>
         </ul>
     </div>
