@@ -1,0 +1,38 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">Register new user</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <div class="modal-body">
+        <form name="registerForm">
+            <div class="form-group row justify-content-center">    
+                <div class="col-md-8">
+                    <input ng-model="user.username" type="text" required placeholder="Username" class="form-control login-input" id="recipient-name">
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <div class="col-md-8">
+                    <input ng-model="user.password" type="password" required placeholder="Password" class="form-control login-input" id="message-text">
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <div class="col-md-8">
+                    <input ng-model="user.passwordRepeat" type="password" required placeholder="Repeat password" class="form-control login-input" id="message-text">
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <div class="col-md-8">
+                    <input ng-model="user.email" type="email" required placeholder="Email" class="form-control login-input" id="message-text">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div ng-if="error.show" class="error-message">
+            {{error.message}}
+        </div>
+        <button type="button" ng-disabled="!registerForm.$valid" ng-click="register()" class="btn btn-primary">Register</button>
+    </div>
+</div>
