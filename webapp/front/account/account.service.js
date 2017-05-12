@@ -4,7 +4,7 @@
     angular.module('uplication')
         .service('accountService', AccountService);
 
-    function AccountService($uibModal, $state) {
+    function AccountService($uibModal, $state, Notification) {
         var service = this;
         var accountInfo = {
             logged: false,
@@ -22,6 +22,7 @@
             accountInfo.logged = false;
             accountInfo.user = null;
             $state.go('recipes');
+            Notification.success("Logout successful");
         }
 
         function handleError(response,error) {
@@ -60,14 +61,16 @@
                         $scope.close();
                         openRegisterModal();
                     }
-
+                    
                     $scope.logIn = function () {
                         console.dir($scope.user);
-                        $http.post("http://planeat-echomil.rhcloud.com/user/login", $scope.user)
+                        $http.post("http://localhost:8080/user/login", $scope.user)
+                        //$http.post("http://planeat-echomil.rhcloud.com/user/login", $scope.user)
                             .then(function success(response) {
                                 accountInfo.logged = true;
                                 accountInfo.user = $scope.user.username;
                                 $scope.close();
+                                Notification.success('Logged successful');
                             }, function error(response) {
                                 handleError(response,$scope.error);
                             });
@@ -92,11 +95,13 @@
 
                     $scope.register = function () {
                         if ($scope.user.password === $scope.user.passwordRepeat) {
-                            $http.post("http://planeat-echomil.rhcloud.com/user/register", $scope.user)
+                            $http.post("http://localhost:8080/user/register", $scope.user)
+                            //$http.post("http://planeat-echomil.rhcloud.com/user/register", $scope.user)
                                 .then(function success(response) {
                                     accountInfo.logged = true;
                                     accountInfo.user = $scope.user.username;
                                     close();
+                                    Notification.success('Registered successful');
                                 }, function error(response) {
                                     handleError(response,$scope.error);
                                 });

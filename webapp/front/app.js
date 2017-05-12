@@ -1,8 +1,8 @@
 (function () {
     "use strict";
 
-    angular.module('uplication', ['ngAnimate','ngResource','ui.router','ui.bootstrap'])
-        .config(function($stateProvider, $urlRouterProvider){
+    angular.module('uplication', ['ngAnimate','ngResource','ui.router','ui.bootstrap','ui-notification'])
+        .config(function($stateProvider, $urlRouterProvider, NotificationProvider){
 
         $stateProvider
             .state('parent',{
@@ -46,6 +46,17 @@
             })
 
             $urlRouterProvider.otherwise('/recipes');
+
+
+            NotificationProvider.setOptions({
+            delay: 2000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'right',
+            positionY: 'top'
+        });
             
     });
 
