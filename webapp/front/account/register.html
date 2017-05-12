@@ -6,7 +6,7 @@
             </button>
     </div>
     <div class="modal-body">
-        <form name="registerForm">
+        <form name="registerForm" ng-submit="register()">
             <div class="form-group row justify-content-center">    
                 <div class="col-md-8">
                     <input ng-model="user.username" type="text" required placeholder="Username" class="form-control login-input" id="recipient-name">
@@ -27,6 +27,7 @@
                     <input ng-model="user.email" type="email" required placeholder="Email" class="form-control login-input" id="message-text">
                 </div>
             </div>
+            <input type="submit" style="position: absolute; left: -9999px"/>
         </form>
     </div>
     <div class="modal-footer">
