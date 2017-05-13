@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('uplication', ['ngAnimate','ngResource','ui.router','ui.bootstrap','ui-notification'])
+    angular.module('uplication', ['uplication.account','ngAnimate','ngResource','ui.router','ui.bootstrap','ui-notification'])
         .config(function($stateProvider, $urlRouterProvider, NotificationProvider){
 
         $stateProvider
@@ -24,10 +24,6 @@
                 abstract: true,
                 url: '/list',
                 templateUrl: 'front/recipes/recipes-main.html'
-            })
-            .state('manageAccount',{
-                url: '/manageAccount',
-                template: '<account-manager></account-manager>'
             })
             .state('list.details',{
                 url: '/details',

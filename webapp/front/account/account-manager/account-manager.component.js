@@ -8,7 +8,7 @@
         });
 
         function AccountManagerController(){
-            console.log("KEKEKEKK12312312312E");
+            
         }
 
 })();

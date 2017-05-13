@@ -25,31 +25,21 @@
             Notification.success("Logout successful");
         }
 
-        function handleError(response,error) {
+        function handleError(response, error) {
             console.dir(response);
-            switch (response.status) {
-                case 409:
-                    error.message = 'User already exists';
-                    break;
-                case 401:
-                    error.message = 'Invalid password';
-                    break;
-                case 403:
-                    error.message = 'User probably doesnt exists';
-                    break;
-            }
+            error.message = response.data.message;
             error.show = true;
         }
 
         function openLogInModal() {
             $uibModal.open({
-                templateUrl: 'front/account/login.html',
+                templateUrl: 'front/account/login-modal.html',
                 size: 'md',
                 controller: function ($scope, $uibModalInstance, $http) {
                     $scope.user = {};
                     $scope.error = {};
 
-                    $scope.$watch('errorMessage',function(){
+                    $scope.$watch('errorMessage', function () {
                         console.log("changed");
                     })
 
@@ -61,18 +51,18 @@
                         $scope.close();
                         openRegisterModal();
                     }
-                    
+
                     $scope.logIn = function () {
                         console.dir($scope.user);
                         $http.post("http://localhost:8080/user/login", $scope.user)
-                        //$http.post("http://planeat-echomil.rhcloud.com/user/login", $scope.user)
+                            //$http.post("http://planeat-echomil.rhcloud.com/user/login", $scope.user)
                             .then(function success(response) {
                                 accountInfo.logged = true;
                                 accountInfo.user = $scope.user.username;
                                 $scope.close();
                                 Notification.success('Logged successful');
                             }, function error(response) {
-                                handleError(response,$scope.error);
+                                handleError(response, $scope.error);
                             });
 
                     }
@@ -82,7 +72,7 @@
 
         function openRegisterModal() {
             $uibModal.open({
-                templateUrl: 'front/account/register.html',
+                templateUrl: 'front/account/register-modal.html',
                 size: 'md',
                 controller: function ($scope, $uibModalInstance, $http) {
                     $scope.close = close;
@@ -96,14 +86,14 @@
                     $scope.register = function () {
                         if ($scope.user.password === $scope.user.passwordRepeat) {
                             $http.post("http://localhost:8080/user/register", $scope.user)
-                            //$http.post("http://planeat-echomil.rhcloud.com/user/register", $scope.user)
+                                //$http.post("http://planeat-echomil.rhcloud.com/user/register", $scope.user)
                                 .then(function success(response) {
                                     accountInfo.logged = true;
                                     accountInfo.user = $scope.user.username;
                                     close();
                                     Notification.success('Registered successful');
                                 }, function error(response) {
-                                    handleError(response,$scope.error);
+                                    handleError(response, $scope.error);
                                 });
                         } else {
                             $scope.error.message = 'Passwords doesnt match';
